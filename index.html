@@ -163,7 +163,7 @@
 					var marker = e.target;
 						popup = L.popup()
 								.setLatLng(marker.getLatLng())
-								.setContent("<b> &nbsp &nbsp &nbsp &nbsp " + marker.myJsonData.City +"</b>"+ "<b><br>Order ID: </b>" + marker.myJsonData.OderID + "<b><br>Item: </b>" + marker.myJsonData.Item + "<b><br>Status: </b>" + marker.myJsonData.Status)
+								.setContent("<b> &nbsp &nbsp &nbsp &nbsp " + marker.myJsonData.City +"</b>"+ "<b><br>Order ID: </b>" + marker.myJsonData.OrderID + "<b><br>Item: </b>" + marker.myJsonData.Item + "<b><br>Status: </b>" + marker.myJsonData.Status)
 								.openOn(map);
 				}
 				
@@ -198,7 +198,7 @@
 		  // Converting Json Object to JavaScript Array
 		  for(var j in jsonDataObject)
 		  {
-			  graph_arr.push([jsonDataObject[j].OderID, jsonDataObject[j].TimeTaken, bar_color[j], jsonDataObject[j].TimeTaken]);
+			  graph_arr.push([jsonDataObject[j].OrderID, jsonDataObject[j].TimeTaken, bar_color[j], jsonDataObject[j].TimeTaken]);
 		  }
 		  
 		  var graphArray_Final = google.visualization.arrayToDataTable(graph_arr);
@@ -224,7 +224,7 @@
 		//Putting data in table
 		for (var i = 0; i < jsonDataObject.length; ++i) 
 			{
-				trHTML += '<tr style="color:white;"><td>' + jsonDataObject[i].OderID + 
+				trHTML += '<tr style="color:white;"><td>' + jsonDataObject[i].OrderID + 
 						  '</td><td>' + jsonDataObject[i].Item + 
 						  '</td><td>' + jsonDataObject[i].Priority + 
 						  '</td><td>' + jsonDataObject[i].City + 
